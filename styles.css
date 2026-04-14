@@ -339,6 +339,14 @@ body.is-transitioning .gallery {
     padding: 20px;
   }
 
+  .sidebar__title {
+    font-size: clamp(1rem, 2.5vw, 2.6rem);
+  }
+
+  .sidebar__description {
+    max-width: 100ch;
+  }
+
   .thumbnail {
     border-radius: 22px;
   }
