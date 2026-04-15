@@ -15,6 +15,12 @@ const initTeaCursor = () => {
   cursor.setAttribute("aria-hidden", "true");
   cursor.textContent = "🍵";
   document.body.appendChild(cursor);
+  const defaultEmoji = "🍵";
+  let hoverEmoji = defaultEmoji;
+
+  const syncCursorEmoji = () => {
+    cursor.textContent = hoverEmoji;
+  };
 
   window.addEventListener("mousemove", (event) => {
     const x = event.clientX + 22;
@@ -25,22 +31,41 @@ const initTeaCursor = () => {
   });
 
   window.addEventListener("mousedown", () => {
-    cursor.textContent = "🫖";
     cursor.classList.add("is-active");
+    syncCursorEmoji();
   });
 
   window.addEventListener("mouseup", () => {
-    cursor.textContent = "🍵";
     cursor.classList.remove("is-active");
+    syncCursorEmoji();
   });
 
   window.addEventListener("blur", () => {
-    cursor.textContent = "🍵";
+    hoverEmoji = defaultEmoji;
     cursor.classList.remove("is-active");
+    syncCursorEmoji();
   });
 
   document.addEventListener("mouseleave", () => {
     cursor.classList.remove("is-visible");
+  });
+
+  document.addEventListener("mouseover", (event) => {
+    const target = event.target.closest("[data-cursor-emoji]");
+    hoverEmoji = target ? target.dataset.cursorEmoji || defaultEmoji : defaultEmoji;
+    syncCursorEmoji();
+  });
+
+  document.addEventListener("mouseout", (event) => {
+    const relatedTarget = event.relatedTarget;
+
+    if (relatedTarget && relatedTarget.closest("[data-cursor-emoji]")) {
+      return;
+    }
+
+    const nextTarget = document.querySelector(":hover[data-cursor-emoji], [data-cursor-emoji]:hover");
+    hoverEmoji = nextTarget ? nextTarget.dataset.cursorEmoji || defaultEmoji : defaultEmoji;
+    syncCursorEmoji();
   });
 };
 

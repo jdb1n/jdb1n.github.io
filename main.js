@@ -25,6 +25,10 @@ const createGalleryCard = (work) => {
 const createIndexRow = (work, index) => {
   const li = document.createElement("li");
   li.className = "sidebar__index-row";
+  if (work.id === "color-of-pomegranates") {
+    li.classList.add("sidebar__index-row--accent");
+    li.dataset.cursorEmoji = "😴";
+  }
   const displayNumber = works.length - index;
 
   li.innerHTML = `

@@ -12,6 +12,20 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Monoplex KR Wide Bold";
+  src: url("./assets/fonts/MonoplexKRWide-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Monoplex KR Wide Text";
+  src: url("./assets/fonts/MonoplexKRWide-Text.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
 :root {
   --bg: #ffffff;
   --panel: #ffffff;
@@ -95,7 +109,7 @@ body {
   align-items: flex-start;
   gap: 20px;
   max-width: 100%;
-  padding-right: 50px;
+  padding-right: 30px;
 }
 
 .sidebar__eyebrow {
@@ -121,8 +135,15 @@ body {
   max-width: 80ch;
   font-family: "Monoplex KR Wide Light", "Avenir Next", sans-serif;
   font-size: 0.56rem;
+  letter-spacing: -0.08em;
   line-height: 1.5;
   color: var(--muted);
+}
+
+.sidebar__description strong {
+  font-family: "Monoplex KR Wide Text", "Avenir Next", sans-serif;
+  font-size: 1.04em;
+  font-weight: 700;
 }
 
 .sidebar__button {
@@ -195,7 +216,7 @@ body {
 }
 
 .sidebar__index-scroll {
-  max-height: 192px;
+  max-height: 168px;
   overflow-y: auto;
   scrollbar-width: none;
   padding-top: 6px;
@@ -208,7 +229,7 @@ body {
 .sidebar__index-row {
   min-height: 20px;
   color: var(--muted);
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   border-bottom: 0.5px solid rgba(23, 23, 23, 0.28);
   transition:
     background-color 140ms ease,
@@ -230,6 +251,10 @@ body {
   white-space: nowrap;
   line-height: 1.25;
   padding: 4px 0 5px;
+}
+
+.sidebar__index-type {
+  font-size: 0.5rem;
 }
 
 a.sidebar__index-title {
@@ -259,6 +284,10 @@ a.sidebar__index-title:hover {
 .sidebar__index-row:hover {
   background: #171717;
   color: #ffffff;
+}
+
+.sidebar__index-row--accent:hover {
+  background: #b32020;
 }
 
 .sidebar__index-row:hover .sidebar__index-title,
