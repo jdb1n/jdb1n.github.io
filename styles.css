@@ -86,7 +86,9 @@ body {
 .layout {
   display: grid;
   grid-template-columns: 420px minmax(0, 1fr);
+  width: min(100%, 1760px);
   min-height: 100vh;
+  margin: 0 auto;
   transition: transform 340ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -292,7 +294,7 @@ a.sidebar__index-title.is-overflowing:hover {
 a.sidebar__index-title.is-overflowing:hover .sidebar__index-title-marquee,
 a.sidebar__index-title.is-overflowing:focus-visible .sidebar__index-title-marquee {
   gap: var(--marquee-gap, 24px);
-  animation: sidebar-title-marquee-loop 2.3s linear infinite;
+  animation: sidebar-title-marquee-loop 3.3s linear infinite;
 }
 
 a.sidebar__index-title:hover {
