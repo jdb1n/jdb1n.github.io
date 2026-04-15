@@ -28,13 +28,16 @@ const createIndexRow = (work, index) => {
   if (work.id === "color-of-pomegranates") {
     li.classList.add("sidebar__index-row--accent");
     li.dataset.cursorEmoji = "😴";
+    li.dataset.cursorNoClick = "true";
   }
   const displayNumber = works.length - index;
 
   li.innerHTML = `
     <span class="sidebar__index-number">${displayNumber}</span>
     <a class="sidebar__index-title" href="${work.href}">
-      <span class="sidebar__index-title-text">${work.title}</span>
+      <span class="sidebar__index-title-marquee">
+        <span class="sidebar__index-title-text">${work.title}</span>
+      </span>
     </a>
     <span class="sidebar__index-type">${work.type}</span>
     <span class="sidebar__index-year">${work.year}</span>
@@ -47,17 +50,32 @@ const bindOverflowTitles = () => {
   const titleLinks = document.querySelectorAll(".sidebar__index-title");
 
   titleLinks.forEach((link) => {
-    const text = link.querySelector(".sidebar__index-title-text");
+    const marquee = link.querySelector(".sidebar__index-title-marquee");
+    const text = marquee ? marquee.querySelector(".sidebar__index-title-text") : null;
 
-    if (!text) {
+    if (!text || !marquee) {
       return;
     }
+
+    marquee.querySelectorAll(".sidebar__index-title-text[aria-hidden='true']").forEach((node) => {
+      node.remove();
+    });
+
+    link.classList.remove("is-overflowing");
+    link.style.removeProperty("--marquee-gap");
+    link.style.removeProperty("--marquee-distance");
 
     const overflowAmount = text.scrollWidth - link.clientWidth;
 
     if (overflowAmount > 1) {
       link.classList.add("is-overflowing");
-      link.style.setProperty("--marquee-shift", `${-overflowAmount - 12}px`);
+      const gap = 24;
+      const clone = text.cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      marquee.appendChild(clone);
+
+      link.style.setProperty("--marquee-gap", `${gap}px`);
+      link.style.setProperty("--marquee-distance", `${text.scrollWidth + gap}px`);
     }
   });
 };
@@ -131,3 +149,5 @@ if (indexRoot) {
 
 bindOverflowTitles();
 bindPageTransitions();
+
+window.addEventListener("resize", bindOverflowTitles);

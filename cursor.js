@@ -16,10 +16,13 @@ const initTeaCursor = () => {
   cursor.textContent = "🍵";
   document.body.appendChild(cursor);
   const defaultEmoji = "🍵";
+  const clickEmoji = "🫖";
   let hoverEmoji = defaultEmoji;
+  let hoverNoClick = false;
 
   const syncCursorEmoji = () => {
-    cursor.textContent = hoverEmoji;
+    cursor.textContent =
+      cursor.classList.contains("is-active") && !hoverNoClick ? clickEmoji : hoverEmoji;
   };
 
   window.addEventListener("mousemove", (event) => {
@@ -53,6 +56,7 @@ const initTeaCursor = () => {
   document.addEventListener("mouseover", (event) => {
     const target = event.target.closest("[data-cursor-emoji]");
     hoverEmoji = target ? target.dataset.cursorEmoji || defaultEmoji : defaultEmoji;
+    hoverNoClick = Boolean(target?.dataset.cursorNoClick);
     syncCursorEmoji();
   });
 
@@ -65,6 +69,7 @@ const initTeaCursor = () => {
 
     const nextTarget = document.querySelector(":hover[data-cursor-emoji], [data-cursor-emoji]:hover");
     hoverEmoji = nextTarget ? nextTarget.dataset.cursorEmoji || defaultEmoji : defaultEmoji;
+    hoverNoClick = Boolean(nextTarget?.dataset.cursorNoClick);
     syncCursorEmoji();
   });
 };
