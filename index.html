@@ -5,25 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DONOTASKMEWHYPLS</title>
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="prefetch" href="./works/cat-returns.html" />
+    <script src="./cursor.js" defer></script>
+    <script src="./works-data.js" defer></script>
+    <script src="./main.js" defer></script>
   </head>
   <body>
     <main class="layout">
       <aside class="sidebar">
         <div class="sidebar__inner">
-          <p class="sidebar__eyebrow">Project</p>
+          <p class="sidebar__eyebrow">TEA BAG PROJECT</p>
           <h1 class="sidebar__title">DO NOT ASK ME WHY PLS</h1>
           <p class="sidebar__description">
-            티백을 추출 장치로 삼아,<br />
-            그동안 말 못했던 영화 감상을 우려냅니다.<br />
-            흔히 말하는 ‘시네필’처럼 근사한 감상문을 쓰지 못한다는 이유로<br />
-            “내가 과연 영화를 좋아하는 사람일까?” 라는 의심을 하곤 했습니다.<br />
-            이건 그 의심에서 벗어나기 위해 시작한 프로젝트로 내가 이 영화에<br />
-            빠진 이유, 이 영화에 담긴 나의 이야기를 솔직하게 기록합니다.<br />
+            <strong>티백을 추출 장치로 삼아, 그동안 말 못했던 영화 감상을 우려냅니다.</strong><br />
+            흔히 말하는 시네필처럼 근사한 감상문을 쓰지 못한다는 이유로
+            ‘내가 과연 영화를 좋아하는 사람일까?’ 라는 의심을 하곤 했습니다.<br />
+            이건 그 의심에서 벗어나기 위해 시작한 프로젝트로 내가 이 영화에 빠진 이유,
+            이 영화에 담긴 나의 이야기를 솔직하게 기록합니다.<br />
             <br />
-            주인공이 너무 슬프게 울어서, 캐릭터의 파마 머리가 너무 예뻐서,<br />
-            그냥 그 영화가 주는 인상이 느낌 좋아서 등의 사소한 이유도 영화를<br />
-            좋아하는 이유라고 떳떳하게 말할 수 있는 나를 상상하며 !
+            주인공이 너무 슬프게 울어서, 캐릭터의 파마 머리가 너무 예뻐서, 그냥 그 영화가
+            주는 인상이 느낌 좋아서 등의 사소한 이유도 영화를 좋아하는 이유라고 떳떳하게
+            말할 수 있는 나를 상상하며 !
           </p>
           <a
             class="sidebar__button"
@@ -34,169 +35,34 @@
             @donotaskmewhypls
           </a>
         </div>
+
+        <section class="sidebar__index" aria-label="Selected work index">
+          <div class="sidebar__index-rule"></div>
+          <div class="sidebar__index-head">
+            <span class="sidebar__index-head-title">TITLE</span>
+            <span>TYPE</span>
+            <span>YR</span>
+          </div>
+          <div class="sidebar__index-scroll">
+            <ol class="sidebar__index-list" id="sidebar-index-list"></ol>
+          </div>
+          <div class="sidebar__index-rule"></div>
+        </section>
+
+        <footer class="sidebar__footer">
+          <p class="sidebar__footer-copy">
+            CONTACT SAMPLE_00<br />
+            PHONE 010.9931.0094 EMAIL INFO@SAMPLE.COM<br />
+            WWW.3244324.SITE @SAMPLE_00
+          </p>
+          <p class="sidebar__footer-note">
+            PROIN SOLLICITUDIN LECTUS NEC ELEIFEND MATTIS, INTEGER NON ELIT.<br />
+            © 2026 ALL RIGHTS RESERVED LAST UPDATED 15-04-2026
+          </p>
+        </footer>
       </aside>
 
-      <section class="gallery" aria-label="Selected works">
-        <article class="card">
-          <a class="card__link" href="./works/cat-returns.html" aria-label="고양이의보은 猫の恩返し 상세 페이지로 이동">
-            <div class="thumbnail">
-              <img src="./assets/images/cat-returns-cover.jpg" alt="고양이의보은 猫の恩返し" decoding="async" />
-            </div>
-          </a>
-          <div class="card__meta">
-            <h2 class="card__title">고양이의보은 猫の恩返し</h2>
-            <p class="card__year">2002</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <a class="card__link" href="./works/monster.html" aria-label="괴물 怪物 상세 페이지로 이동">
-            <div class="thumbnail">
-              <img src="./assets/images/monster-cover.jpg" alt="괴물 怪物" />
-            </div>
-          </a>
-          <div class="card__meta">
-            <h2 class="card__title">괴물 怪物</h2>
-            <p class="card__year">2023</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <a class="card__link" href="./works/troll-factory.html" aria-label="댓글부대 Troll Factory 상세 페이지로 이동">
-            <div class="thumbnail">
-              <img src="./assets/images/troll-factory-cover.jpg" alt="댓글부대 Troll Factory" />
-            </div>
-          </a>
-          <div class="card__meta">
-            <h2 class="card__title">댓글부대 Troll Factory</h2>
-            <p class="card__year">2023</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <a class="card__link" href="./works/the-fall.html" aria-label="더폴 The Fall 상세 페이지로 이동">
-            <div class="thumbnail">
-              <img src="./assets/images/the-fall-cover.jpg" alt="더폴 The Fall" />
-            </div>
-          </a>
-          <div class="card__meta">
-            <h2 class="card__title">더폴 The Fall</h2>
-            <p class="card__year">2006</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <a class="card__link" href="./works/color-of-pomegranates.html" aria-label="석류의 빛깔 The Color of Pomegranates 상세 페이지로 이동">
-            <div class="thumbnail">
-              <img src="./assets/images/color-of-pomegranates-cover.jpg" alt="석류의 빛깔 The Color of Pomegranates" />
-            </div>
-          </a>
-          <div class="card__meta">
-            <h2 class="card__title">석류의 빛깔 The Color of Pomegranates</h2>
-            <p class="card__year">1969</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <a class="card__link" href="./works/nobody-knows.html" aria-label="아무도모른다 誰も知らない 상세 페이지로 이동">
-            <div class="thumbnail">
-              <img src="./assets/images/nobody-knows-cover.jpg" alt="아무도모른다 誰も知らない" />
-            </div>
-          </a>
-          <div class="card__meta">
-            <h2 class="card__title">아무도모른다 誰も知らない</h2>
-            <p class="card__year">2004</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <a class="card__link" href="./works/shortcomings.html" aria-label="완벽하지않아 Shortcomings 상세 페이지로 이동">
-            <div class="thumbnail">
-              <img src="./assets/images/shortcomings-cover.jpg" alt="완벽하지않아 Shortcomings" />
-            </div>
-          </a>
-          <div class="card__meta">
-            <h2 class="card__title">완벽하지않아 Shortcomings</h2>
-            <p class="card__year">2023</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <a class="card__link" href="./works/challengers.html" aria-label="챌린저스 Challengers 상세 페이지로 이동">
-            <div class="thumbnail">
-              <img src="./assets/images/challengers-cover.jpg" alt="챌린저스 Challengers" />
-            </div>
-          </a>
-          <div class="card__meta">
-            <h2 class="card__title">챌린저스 Challengers</h2>
-            <p class="card__year">2023</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <a class="card__link" href="./works/atypical-family.html" aria-label="히어로는 아닙니다만 The Atypical Family 상세 페이지로 이동">
-            <div class="thumbnail">
-              <img src="./assets/images/atypical-family-cover.jpg" alt="히어로는 아닙니다만 The Atypical Family" />
-            </div>
-          </a>
-          <div class="card__meta">
-            <h2 class="card__title">히어로는 아닙니다만 The Atypical Family</h2>
-            <p class="card__year">2024</p>
-          </div>
-        </article>
-      </section>
+      <section class="gallery" id="gallery" aria-label="Selected works"></section>
     </main>
-    <script>
-      const workLinks = document.querySelectorAll(".card__link");
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-      const prefetchedHrefs = new Set();
-
-      const prefetchDocument = (href) => {
-        if (!href || prefetchedHrefs.has(href)) {
-          return;
-        }
-
-        prefetchedHrefs.add(href);
-
-        const link = document.createElement("link");
-        link.rel = "prefetch";
-        link.href = href;
-        document.head.appendChild(link);
-      };
-
-      workLinks.forEach((link) => {
-        prefetchDocument(link.href);
-
-        link.addEventListener("mouseenter", () => {
-          prefetchDocument(link.href);
-        });
-
-        link.addEventListener("focus", () => {
-          prefetchDocument(link.href);
-        });
-
-        link.addEventListener("click", (event) => {
-          if (
-            reduceMotion.matches ||
-            event.defaultPrevented ||
-            event.metaKey ||
-            event.ctrlKey ||
-            event.shiftKey ||
-            event.altKey ||
-            event.button !== 0
-          ) {
-            return;
-          }
-
-          event.preventDefault();
-
-          document.body.classList.add("is-transitioning");
-
-          window.setTimeout(() => {
-            window.location.href = link.href;
-          }, 340);
-        });
-      });
-    </script>
   </body>
 </html>
