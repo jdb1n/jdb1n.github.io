@@ -55,7 +55,7 @@ const bindOverflowTitles = () => {
 
     const overflowAmount = text.scrollWidth - link.clientWidth;
 
-    if (overflowAmount > 4) {
+    if (overflowAmount > 1) {
       link.classList.add("is-overflowing");
       link.style.setProperty("--marquee-shift", `${-overflowAmount - 12}px`);
     }

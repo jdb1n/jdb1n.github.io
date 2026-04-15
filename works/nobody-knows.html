@@ -7,18 +7,14 @@
     <link rel="stylesheet" href="../styles.css" />
     <script src="../cursor.js" defer></script>
   </head>
-  <body class="work-page">
+  <body class="work-page" data-work-id="nobody-knows">
     <main class="work-shell">
       <div class="work-topbar">
-        <div>아무도모른다 誰も知らない</div>
-        <div>2004</div>
+        <div data-work-title>아무도모른다 誰も知らない</div>
+        <div data-work-year>2004</div>
       </div>
       <div class="work-content">
-        <section class="work-gallery" aria-label="아무도모른다 誰も知らない 이미지">
-          <figure class="work-figure">
-            <img src="../assets/images/nobody-knows-cover.jpg" alt="아무도모른다 誰も知らない" />
-          </figure>
-        </section>
+        <section class="work-gallery" aria-label="아무도모른다 誰も知らない 이미지"></section>
         <aside class="work-info">
           <h1 class="work-info__title">아무도모른다 誰も知らない</h1>
           <p class="work-info__body">작품 설명을 입력해주세요.</p>
@@ -27,5 +23,7 @@
       </div>
       <a class="back-link" href="../index.html">Back to all works</a>
     </main>
+    <script src="../works-data.js"></script>
+    <script src="../work-detail.js"></script>
   </body>
 </html>
